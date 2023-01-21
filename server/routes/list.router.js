@@ -19,4 +19,33 @@ router.get("/gettasks", (req, res) => {
         });
 });
 
+// POST request to add new task to list
+router.post("/newtask", (req, res) => {
+    console.log("post task", req.body);
+    const task = req.body.task;
+    const complete = req.body.complete;
+    const timeCompleted = req.body.timeCompleted;
+
+    // if (!task || !complete || !timeCompleted) {
+    //   const errorMessage = "error message";
+    //   console.log(errorMessage);
+    //   res.status(400).send(errorMessage);
+    // }
+
+    const queryText = `
+        INSERT INTO "list" ("task", "complete", "timeCompleted" )
+        VALUES ($1, $2, $3);`;
+
+    pool
+        .query(queryText, [task, complete, timeCompleted])
+        .then((response) => {
+            console.log('Successful POSt on /newtask')
+            res.sendStatus(201);
+        })
+        .catch((error) => {
+            console.log(`error ${queryText}`, error);
+            res.sendStatus(500);
+        });
+});
+
 module.exports = router;
