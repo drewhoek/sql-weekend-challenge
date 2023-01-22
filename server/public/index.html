@@ -14,14 +14,19 @@
             <header>
                 <h1>My To-Do List</h1>
             </header>
-            <div id="input-field"></div>
+            <div id="input-field">
+                <label for="#task-input">Enter New Task:</label>
+                <input type="text" class="input" id="task-input" placeholder="New Task"/>
+                <label for="#complete-input">Mark as Completed:</label>
+                <input type="text" class="input" id="complete-input" placeholder="TRUE or FALSE"/>
+                <button type="submit" class="submit" id="new-task-btn">ADD</button>
+            </div>
             <hr/>
             <div id="table-container">
                 <table>
                     <thead>
                         <th>Task</th>
                         <th>Completed?</th>
-                        <th>Time Completed</th>
                     </thead>
                     <tbody id="list-body"></tbody>
                 </table>
