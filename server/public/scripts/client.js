@@ -45,13 +45,18 @@ function renderList(list) {
 
     console.log("in list history", list);
 
+ 
     for (const item of list) {
+        let className='';
+        if (item.complete) {
+          className = 'completed-task';
+        }
         $("#list-body").append(`
-    <tr> 
+    <tr class="${className}"> 
     <td> ${item.task}</td>
-    <td> ${item.complete} </td>
+    <td> ${item.complete  ? '&#x2713;' : 'X'} </td>
+    <td> <button data-id="${item.id}" class="edit-btn"> MARK AS ${item.complete ? 'INCOMPLETE' : 'COMPLETE'} </button></td>
     <td> <button data-id="${item.id}" class="delete-btn"> DELETE </button></td>
-    <td> <button data-id="${item.id}" class="edit-btn"> COMPLETE </button></td>
     </tr>`);
     }
 }

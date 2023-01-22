@@ -10,7 +10,7 @@ body {
 }
 
 main {
-    min-height: 95vh;
+    min-height: 0vh;
     width: 90vw;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -20,15 +20,21 @@ main {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 50px;
 }
 
 header {
     padding-bottom: 5px;
     border-bottom: 3px ridge aquamarine;
     margin-bottom: 2vh;
+    color: green;
+    text-emphasis: bold;
 }
 
 #input-field {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     border-bottom: 3px ridge aquamarine;
     margin-bottom: 2vh;
     padding-bottom: 2vh;
@@ -39,11 +45,12 @@ header {
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    min-width: 500px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-collapse:separate;
     border: solid #dddddd 1px;
     border-radius: 10px;
+    color: green;
 }
 
 #list-table thead tr {
@@ -103,3 +110,27 @@ button:hover {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
+.completed-task {
+    background-color: green !important;
+    color: #dddddd !important;
+}
+
+input {
+    border: 3px solid green;
+    border-radius: 5px;
+    height: 30px;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    user-select: auto;
+    font-size: 16px;
+    padding: 7px 20px;
+}
+    input:focus{
+        border: 3px solid black;
+    }
+    
+

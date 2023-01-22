@@ -5,7 +5,7 @@ const pool = require("../modules/pool");
 // GET request to aquire data from database
 router.get("/gettasks", (req, res) => {
     console.log("router list");
-    const queryText = `SELECT * FROM "list";`;
+    const queryText = `SELECT * FROM "list" ORDER BY "complete", "task";`;
 
     pool
         .query(queryText)
@@ -64,7 +64,7 @@ router.delete('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
     console.log(`Updating task with id ${req.params}`);
-    let queryText = `UPDATE "list" SET "complete"= 'true' WHERE id=$1 RETURNING *;`;
+    let queryText = `UPDATE "list" SET "complete"= NOT "complete" WHERE id=$1 RETURNING *;`;
     pool.query(queryText, [req.params.id]).then((result) => {
       res.send(result.rows);
     })
