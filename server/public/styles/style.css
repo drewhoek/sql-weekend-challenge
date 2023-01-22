@@ -33,3 +33,73 @@ header {
     margin-bottom: 2vh;
     padding-bottom: 2vh;
 }
+
+#list-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-collapse:separate;
+    border: solid #dddddd 1px;
+    border-radius: 10px;
+}
+
+#list-table thead tr {
+    background-color: aquamarine;
+    color: green;
+    text-align: left;
+    border:solid rgba(0, 0, 0, 0.15) 1px;
+    border-radius: 10px;
+}
+
+th:first-of-type {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  th:last-of-type {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#list-table th,
+#list-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+#list-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+#list-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+#list-table tbody tr:last-of-type {
+    border-bottom: 2px solid aquamarine;
+}
+
+button {
+  background-color: aquamarine;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
