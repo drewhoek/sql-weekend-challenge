@@ -2,6 +2,7 @@ $(function () {
     console.log('jq and js');
     getTasks();
     $('#new-task-btn').on('click', newTask);
+    $('#list-body').on('click', '.delete-btn', deleteTask);
 });
 
 function getTasks() {
@@ -52,4 +53,16 @@ function renderList(list) {
     <td> <button data-id="${item.id}" class="edit-btn"> COMPLETE </button></td>
     </tr>`);
     }
+}
+
+function deleteTask(event) {
+    let id = $(event.target).data('id');
+    $.ajax({
+      method: 'DELETE',
+      url: `/list/${id}`
+    }).then(() => {
+      getTasks();
+    }).catch((error) => {
+      console.log('error in deleting:', error);
+    });
 }
