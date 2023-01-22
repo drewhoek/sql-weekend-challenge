@@ -46,4 +46,20 @@ router.post("/newtask", (req, res) => {
         });
 });
 
+router.delete('/:id', (req, res) => {
+    console.log('In DELETE route /list', req.params);
+    let id = req.params.id;
+    const query = `DELETE FROM "list" WHERE id=$1;`;
+    if (!id || id === '') {
+        res.status(400).send('Error in request');
+    } else {
+        pool.query(query, [id]).then(() => {
+            res.sendStatus(204);
+        }).catch((error) => {
+            console.log(`Error deleting task`, error);
+            res.sendStatus(500);
+        });
+    }
+});
+
 module.exports = router;
