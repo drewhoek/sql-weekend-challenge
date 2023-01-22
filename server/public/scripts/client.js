@@ -19,11 +19,9 @@ function newTask(task) {
     console.log("in newTask", task);
     let taskToSend = {
       task: $("#task-input").val(),
-      complete: $("#complete-input").val(),
     };
   
     $("#task-input").val('');
-    $("#complete-input").val('');
 
     $.ajax({
       type: "POST",

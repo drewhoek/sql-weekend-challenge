@@ -23,7 +23,6 @@ router.get("/gettasks", (req, res) => {
 router.post("/newtask", (req, res) => {
     console.log("post task", req.body);
     const task = req.body.task;
-    const complete = req.body.complete;
 
     // if (!task || !complete || !timeCompleted) {
     //   const errorMessage = "error message";
@@ -32,13 +31,13 @@ router.post("/newtask", (req, res) => {
     // }
 
     const queryText = `
-        INSERT INTO "list" ("task", "complete")
-        VALUES ($1, $2);`;
+        INSERT INTO "list" ("task")
+        VALUES ($1);`;
 
     pool
-        .query(queryText, [task, complete])
+        .query(queryText, [task])
         .then((response) => {
-            console.log('Successful POSt on /newtask')
+            console.log('Successful POST on /newtask')
             res.sendStatus(201);
         })
         .catch((error) => {
