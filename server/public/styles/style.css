@@ -1,3 +1,35 @@
 body {
+    font-size: 0.9em;
+    font-family: sans-serif;
+    height: 100vh;
+    margin: 0;
     background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    min-height: 95vh;
+    width: 90vw;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    padding-bottom: 5px;
+    border-bottom: 3px ridge aquamarine;
+    margin-bottom: 2vh;
+}
+
+#input-field {
+    border-bottom: 3px ridge aquamarine;
+    margin-bottom: 2vh;
+    padding-bottom: 2vh;
 }
