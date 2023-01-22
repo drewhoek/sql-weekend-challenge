@@ -49,7 +49,7 @@ function renderList(list) {
     <td> ${item.task}</td>
     <td> ${item.complete} </td>
     <td> <button data-id="${item.id}" class="delete-btn"> DELETE </button></td>
-    <td> <button data-id="${item.id}" class="edit-btn"> EDIT </button></td>
+    <td> <button data-id="${item.id}" class="edit-btn"> COMPLETE </button></td>
     </tr>`);
     }
 }
