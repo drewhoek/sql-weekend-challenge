@@ -49,5 +49,3 @@ Please install the following for the app to work on a local machine:
 ## Acknowledgment
 
 Thanks to Mason and Blaine for the instruction and my cohort mates for helping when I needed it!
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
